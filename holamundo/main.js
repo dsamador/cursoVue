@@ -22,7 +22,12 @@ const app = Vue.createApp({
             this.cantidad -= valor
         }
     },
-    computed:{
-        
+    computed:{/* Siempre deben retornar alguna información osea debes usar Return*/
+        colorCantidad(){
+            return this.cantidad > 500 ? 'text-success' : 'text-danger'
+        },
+        mayusculasTexto(){
+            return this.titulo.toUpperCase()
+        }
     }
 })

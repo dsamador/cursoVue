@@ -9,9 +9,13 @@
 </head>
 <body>
     <div id='app'>
-        <h1>{{titulo}}</h1>
+        <h1>{{mayusculasTexto}}</h1>
         <!-- Para las validaciones siempre toca usar corchetes -->
-        <h2 class="bg-dark" :class="[cantidad > 500 ? 'text-success' : 'text-danger']">
+        <!-- <h2 class="bg-dark" :class="[cantidad > 500 ? 'text-success' : 'text-danger']">
+            Mi saldo es de : {{cantidad}}
+        </h2> -->
+        <!-- Al usar propiedades computadas no es necesario  -->
+        <h2 class="bg-dark" :class="colorCantidad">
             Mi saldo es de : {{cantidad}}
         </h2>
         <!-- Para trabajar con propiedades html toca usar directivas
@@ -36,8 +40,10 @@
         <hr>
         <button @click="agregarSaldo()">Agregar saldo</button>
         <button @click="disminuirSaldo(100)" :disabled="desactivar">Disminuir saldo</button>
-    </div>    
+    </div>        
+    <footer-banco/>
     <script src="main.js"></script>
+    <script src="components/Footer.js"></script>
     <script>
         const mountedApp = app.mount('#app')
     </script>
